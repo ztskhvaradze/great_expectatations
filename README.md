@@ -18,12 +18,14 @@ git clone <repository_url>
 
 
 2. Install the required Python dependencies:
-pip install -r requirements.txt
+pip install great_expectations
+pip install sqlalchemy
+pip install pyodbc
 
 
 
 
-3. Update the `connection_string` variable in the notebook to point to your own AdventureWorks2012 database.
+4. Update the `connection_string` variable in the notebook to point to your own AdventureWorks2012 database.
 
 ## Usage
 
