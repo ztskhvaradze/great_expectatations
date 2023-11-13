@@ -60,40 +60,11 @@ The notebook demonstrates how to create Expectation Suites, validate data, gener
 
 ## Creating a Checkpoint
 
-1. Create a checkpoint configuration file with a descriptive name, such as `location_table_checkpoint.yml`, in the `great_expectations/checkpoints/` folder of your project. The content of the file should look like this:
+Checkpoints
 
-```yaml
-name: location_table_checkpoint
-config_version: 1.0
-class_name: SimpleCheckpoint
-validations:
-  - batch_request:
-        datasource_name: sql_server_datasoure
-        data_connector_name: default_inferred_data_connector_name
-        data_asset_name: Production.Location
-    expectation_suite_name: Production.Product.basic_suite
-This checkpoint configuration defines a checkpoint named location_table_checkpoint, and it uses the SimpleCheckpoint class to perform a single validation. The validation uses the Production.Product.basic_suite Expectation Suite and the sql_server_datasoure datasource.
-
-Run the checkpoint using the Great Expectations CLI command:
-
-bash
-
-
-great_expectations checkpoint run location_table_checkpoint
-This command will execute the data validation process defined by the checkpoint and generate the validation result. If any actions are associated with the checkpoint or the Expectation Suite (e.g., updating Data Docs), those actions will be executed as well.
-
-To run the checkpoint programmatically from your Python code, use the context.run_checkpoint() method:
-
-python
-
-
-checkpoint_result = context.run_checkpoint(checkpoint_name="location_table_checkpoint")
-print(checkpoint_result)
-This example will run the checkpoint programmatically and print the validation result.
-
-With a checkpoint in place, you can easily run the data validation process whenever needed, and integrate it into your data pipelines or other workflows for monitoring data quality more effectively.
-
-Additional Notes
-Remember to update the connection_string variable in the notebook to match your SQL Server configuration. You may need to adjust the table and column names used in the notebook if you want to use this project for validating different tables in the AdventureWorks2012 database or other database schemas.
-
-To validate data in tables other than Production.Location, update the batch_request variable to fetch data from the desired table and adjust the expectations in the Expectation Suite accordingly.
+1. Assuming you have successfully configured your datasource and created custom Expectation Suites, use the provided `checkpoint_creation.py` script to create a Checkpoint.
+2. Configure the connection string in the script to match your database connection.
+3. Set up a BatchRequest in the script to fetch data from the table you want to validate.
+4. Use the `add_or_update_checkpoint()` method to create a Checkpoint with the appropriate name and referencing your custom Expectation Suite.
+5. Run the Checkpoint using the `checkpoint.run()` method in your Python code.
+6. The validation results will be stored in your DataContext and can be viewed in the Data Docs.
