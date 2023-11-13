@@ -18,9 +18,12 @@ git clone <repository_url>
 
 
 2. Install the required Python dependencies:
-pip install great_expectations
-pip install sqlalchemy
-pip install pyodbc
+   
+* pip install great_expectations
+  
+* pip install sqlalchemy
+  
+* pip install pyodbc
 
 
 
