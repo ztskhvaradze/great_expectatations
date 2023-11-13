@@ -60,11 +60,5 @@ The notebook demonstrates how to create Expectation Suites, validate data, gener
 
 ## Creating a Checkpoint
 
-Checkpoints
+Assuming you have successfully configured your datasource and created custom Expectation Suites, use the provided script to create a Checkpoint.
 
-1. Assuming you have successfully configured your datasource and created custom Expectation Suites, use the provided `checkpoint_creation.py` script to create a Checkpoint.
-2. Configure the connection string in the script to match your database connection.
-3. Set up a BatchRequest in the script to fetch data from the table you want to validate.
-4. Use the `add_or_update_checkpoint()` method to create a Checkpoint with the appropriate name and referencing your custom Expectation Suite.
-5. Run the Checkpoint using the `checkpoint.run()` method in your Python code.
-6. The validation results will be stored in your DataContext and can be viewed in the Data Docs.
