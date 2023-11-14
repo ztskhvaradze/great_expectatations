@@ -1,6 +1,6 @@
 # Great Expectations SQL Server Project
 
-This project demonstrates how to use Great Expectations with SQL Server to create validation checks and documentation for your data using Expectation Suites, Checkpoints, and Data Docs. The example uses the AdventureWorks2012 sample database and validates the `Production.Location` table.
+This Jupyter notebook demonstrates how to use Great Expectations to analyze data in SQL Server, generate Expectation Suites, validate data, and create checkpoints.
 
 ## Prerequisites
 
@@ -32,31 +32,19 @@ git clone <repository_url>
 
 ## Usage
 
-Run the Jupyter notebook, which demonstrates the following steps:
+Once you've completed the setup, follow these steps to run the notebook:
 
-1. Initialize a Great Expectations DataContext for your project.
+Open the Jupyter notebook in Jupyter Lab, Jupyter Notebook, or your preferred Jupyter environment.
 
-2. Set up and configure the SQL Server datasource.
+Run each cell in the notebook sequentially to configure the Data Context, add the datasource, create a BatchRequest, use the built-in profiler to generate expectations, save the generated Expectation Suite, create a checkpoint, run the checkpoint, build Data Docs, and open them in the browser.
 
-3. Create a new empty Expectation Suite.
+Review the generated Expectation Suite in the expectations folder, and examine validation results in the Data Docs.
 
-4. Create a BatchRequest to fetch data from the 'Production.Location' table in the AdventureWorks2012 database.
+Customize the notebook according to your needs, for example:
 
-5. Validate the data using a built-in profiler to automatically generate an Expectation Suite.
-
-6. Save the generated Expectation Suite to the DataContext.
-
-7. Add custom Expectations to the Expectation Suite for more specific validation checks.
-
-8. Validate the data against the custom Expectation Suite.
-
-9. Generate and open Data Docs in your default web browser to browse your Expectation Suites and validation results.
-
-10. Create a checkpoint configuration file for your data validation process.
-
-11. Run the checkpoint using the Great Expectations CLI command or programmatically in your Python code.
-
-The notebook demonstrates how to create Expectation Suites, validate data, generate Data Docs, and create Checkpoints using Great Expectations with SQL Server.
+Add more datasets and batch requests to analyze and validate additional tables.
+Adjust the built-in profiler's configuration to modify the way it generates expectations.
+For more advanced use cases, consult the Great Expectations documentation and explore other features such as custom profilers, custom expectations, and more complex validation scenarios.
 
 ## Creating a Checkpoint
 
