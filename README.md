@@ -44,7 +44,6 @@ Customize the notebook according to your needs, for example:
 
 Add more datasets and batch requests to analyze and validate additional tables.
 Adjust the built-in profiler's configuration to modify the way it generates expectations.
-For more advanced use cases, consult the Great Expectations documentation and explore other features such as custom profilers, custom expectations, and more complex validation scenarios.
 
 ## Creating a Checkpoint
 
